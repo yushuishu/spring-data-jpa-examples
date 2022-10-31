@@ -1,0 +1,83 @@
+{
+  "groups": [
+    {
+      "name": "spring.datasource",
+      "type": "org.springframework.jdbc.datasource.DriverManagerDataSource",
+      "sourceType": "com.shuishu.demo.jpa.common.config.jdbc.SqlQueryConfiguration",
+      "sourceMethod": "dataSource()"
+    }
+  ],
+  "properties": [
+    {
+      "name": "spring.datasource.catalog",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.jdbc.datasource.DriverManagerDataSource"
+    },
+    {
+      "name": "spring.datasource.catalog",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.jdbc.datasource.DriverManagerDataSource"
+    },
+    {
+      "name": "spring.datasource.connection-properties",
+      "type": "java.util.Properties",
+      "sourceType": "org.springframework.jdbc.datasource.DriverManagerDataSource"
+    },
+    {
+      "name": "spring.datasource.connection-properties",
+      "type": "java.util.Properties",
+      "sourceType": "org.springframework.jdbc.datasource.DriverManagerDataSource"
+    },
+    {
+      "name": "spring.datasource.login-timeout",
+      "type": "java.lang.Integer",
+      "sourceType": "org.springframework.jdbc.datasource.DriverManagerDataSource"
+    },
+    {
+      "name": "spring.datasource.login-timeout",
+      "type": "java.lang.Integer",
+      "sourceType": "org.springframework.jdbc.datasource.DriverManagerDataSource"
+    },
+    {
+      "name": "spring.datasource.password",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.jdbc.datasource.DriverManagerDataSource"
+    },
+    {
+      "name": "spring.datasource.password",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.jdbc.datasource.DriverManagerDataSource"
+    },
+    {
+      "name": "spring.datasource.schema",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.jdbc.datasource.DriverManagerDataSource"
+    },
+    {
+      "name": "spring.datasource.schema",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.jdbc.datasource.DriverManagerDataSource"
+    },
+    {
+      "name": "spring.datasource.url",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.jdbc.datasource.DriverManagerDataSource"
+    },
+    {
+      "name": "spring.datasource.url",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.jdbc.datasource.DriverManagerDataSource"
+    },
+    {
+      "name": "spring.datasource.username",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.jdbc.datasource.DriverManagerDataSource"
+    },
+    {
+      "name": "spring.datasource.username",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.jdbc.datasource.DriverManagerDataSource"
+    }
+  ],
+  "hints": []
+}
