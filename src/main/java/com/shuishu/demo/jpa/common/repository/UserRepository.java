@@ -5,6 +5,7 @@ import com.shuishu.demo.jpa.common.config.jdbc.BaseRepository;
 import com.shuishu.demo.jpa.common.domain.User;
 import org.springframework.data.jpa.repository.Lock;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import javax.persistence.LockModeType;
 import java.util.Optional;
@@ -22,7 +23,7 @@ public interface UserRepository extends BaseRepository<User, Long> {
      */
     @Lock(LockModeType.PESSIMISTIC_WRITE)
     @Query(value = "select a from User a where a.userId = :userId")
-    Optional<User> findByIdForUpdate(Long userId);
+    Optional<User> findByIdForUpdate(@Param("userId") Long userId);
 
     /**
      * 获取用户信息

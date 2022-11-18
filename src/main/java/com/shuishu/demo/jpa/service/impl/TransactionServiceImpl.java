@@ -6,10 +6,14 @@ import com.shuishu.demo.jpa.common.domain.User;
 import com.shuishu.demo.jpa.common.dsl.UserDsl;
 import com.shuishu.demo.jpa.common.repository.UserRepository;
 import com.shuishu.demo.jpa.service.TransactionService;
+import org.hibernate.Session;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.Optional;
 
 /**
@@ -23,6 +27,8 @@ public class TransactionServiceImpl implements TransactionService {
     private UserRepository userRepository;
     @Resource
     private UserDsl userDsl;
+    @PersistenceContext
+    private EntityManager entityManager;
 
 
     @Override
@@ -47,12 +53,20 @@ public class TransactionServiceImpl implements TransactionService {
 
     @Override
     public void findForSet(Long userId) {
-        //User user = userRepository.findFirstByUserId(userId);
         User user = userDsl.findByUserId(userId);
-
         System.out.println(user.getIntegrate());
-
         user.setIntegrate(666);
+
+        // 持久态对象set操作之后，更新SQL时间：1、只有再次查询表数据时，会先执行跟新语句。2、当前事务结束
+        System.out.println("-------------------- 1");
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        User user2 = userDsl.findByUserId(userId);
+        System.out.println(user2);
+        System.out.println("-------------------- 2");
     }
 
     @Override
@@ -75,7 +89,26 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Override
-    public User getUser(Long userId) {
-        return userRepository.findFirstByUserId(userId);
+    public void find2ForSet(Long userId) {
+        User user = userDsl.findByUserId(userId);
+        System.out.println(user.getIntegrate());
+
+        // 持久态对象 转换为 游离态对象
+
+        entityManager.unwrap(Session.class).evict(user);
+
+        user.setIntegrate(666);
     }
+
+    @Override
+    public void find3ForSet(Long userId) {
+        User dbUser = userDsl.findByUserId(userId);
+        System.out.println(dbUser.getIntegrate());
+
+        // new 操作，对象是瞬时态
+        User user = new User();
+        BeanUtils.copyProperties(dbUser,user);
+        user.setIntegrate(666);
+    }
+
 }
