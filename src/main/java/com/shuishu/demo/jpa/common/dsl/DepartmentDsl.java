@@ -2,8 +2,8 @@ package com.shuishu.demo.jpa.common.dsl;
 
 
 import com.shuishu.demo.jpa.common.config.jdbc.BaseDsl;
-import com.shuishu.demo.jpa.common.domain.Department;
-import com.shuishu.demo.jpa.common.domain.QDepartment;
+import com.shuishu.demo.jpa.common.domain.po.Department;
+import com.shuishu.demo.jpa.common.domain.po.QDepartment;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

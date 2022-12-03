@@ -2,7 +2,7 @@ package com.shuishu.demo.jpa.service.impl;
 
 
 import com.shuishu.demo.jpa.common.config.exception.BusinessException;
-import com.shuishu.demo.jpa.common.domain.User;
+import com.shuishu.demo.jpa.common.domain.po.User;
 import com.shuishu.demo.jpa.common.dsl.UserDsl;
 import com.shuishu.demo.jpa.common.repository.UserRepository;
 import com.shuishu.demo.jpa.service.TransactionService;

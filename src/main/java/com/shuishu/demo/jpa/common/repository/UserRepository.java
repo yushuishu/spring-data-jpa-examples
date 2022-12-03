@@ -2,7 +2,7 @@ package com.shuishu.demo.jpa.common.repository;
 
 
 import com.shuishu.demo.jpa.common.config.jdbc.BaseRepository;
-import com.shuishu.demo.jpa.common.domain.User;
+import com.shuishu.demo.jpa.common.domain.po.User;
 import org.springframework.data.jpa.repository.Lock;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

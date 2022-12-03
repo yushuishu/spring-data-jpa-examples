@@ -29,6 +29,21 @@
         <com.alibaba.fastjson.version>1.2.79</com.alibaba.fastjson.version>
         <google.guava.version>31.1-jre</google.guava.version>
         <com.github.xiaoymin.knife4j-spring-boot-starter.version>2.0.9</com.github.xiaoymin.knife4j-spring-boot-starter.version>
+
+
+<!--        <spring-boot.version>2.7.5</spring-boot.version>-->
+<!--        <postgresql.version>42.5.0</postgresql.version>-->
+<!--        <com.zaxxer.HikariCP.version>5.0.1</com.zaxxer.HikariCP.version>-->
+<!--        <org.hibernate.validator.hibernate-validator.version>6.2.5.Final</org.hibernate.validator.hibernate-validator.version>-->
+<!--        <com.querydsl.querydsl-sql-spring.version>4.3.1</com.querydsl.querydsl-sql-spring.version>-->
+<!--        <querydsl.version>5.0.0</querydsl.version>-->
+<!--        <javax.validation.validation-api.version>2.0.1.Final</javax.validation.validation-api.version>-->
+<!--        <joda-time.version>2.10.14</joda-time.version>-->
+<!--        <hutool-all.version>5.7.22</hutool-all.version>-->
+<!--        <lombok.version>1.18.22</lombok.version>-->
+<!--        <com.alibaba.fastjson.version>2.0.19</com.alibaba.fastjson.version>-->
+<!--        <google.guava.version>31.1-jre</google.guava.version>-->
+<!--        <com.github.xiaoymin.knife4j-spring-boot-starter.version>-->
     </properties>
 
 

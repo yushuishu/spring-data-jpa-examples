@@ -2,7 +2,7 @@ package com.shuishu.demo.jpa.common.repository;
 
 
 import com.shuishu.demo.jpa.common.config.jdbc.BaseRepository;
-import com.shuishu.demo.jpa.common.domain.Position;
+import com.shuishu.demo.jpa.common.domain.po.Position;
 
 /**
  * @author wuZhenFeng

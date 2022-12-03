@@ -20,6 +20,13 @@ public class PageDTO {
     @Min(value = 1, message = "页码从1开始")
     private long pageNumber = 1;
 
+    public <T> PageVO<T> toPageVO(Class<T> cl) {
+        PageVO<T> pageVo = new PageVO<T>();
+        pageVo.setPageNumber(pageNumber);
+        pageVo.setPageSize(pageSize);
+        return pageVo;
+    }
+
     public long getPageSize() {
         return pageSize;
     }

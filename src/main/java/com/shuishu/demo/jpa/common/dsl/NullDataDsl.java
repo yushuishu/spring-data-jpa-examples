@@ -2,8 +2,8 @@ package com.shuishu.demo.jpa.common.dsl;
 
 
 import com.shuishu.demo.jpa.common.config.jdbc.BaseDsl;
-import com.shuishu.demo.jpa.common.domain.NullData;
-import com.shuishu.demo.jpa.common.domain.QNullData;
+import com.shuishu.demo.jpa.common.domain.po.NullData;
+import com.shuishu.demo.jpa.common.domain.po.QNullData;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
