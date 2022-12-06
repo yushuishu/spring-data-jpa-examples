@@ -107,6 +107,7 @@ public class UserDsl extends BaseDsl {
                 qUser.userId, qUser.userName, qUser.userAge, qUser.integrate
         ))
                 .from(qUser)
+                .where(builder)
                 .orderBy(qUser.userAge.asc().nullsFirst())
                 .fetch();
     }
@@ -167,7 +168,7 @@ public class UserDsl extends BaseDsl {
      */
     public List<UserVO> findUseConcatList() {
         return jpaQueryFactory.select(Projections.fields(UserVO.class,
-                qUser.userId,
+                qUser.userName,
                 qUser.userAge,
                 qUser.userName.concat(":").concat(qUser.userAge.stringValue()).as("nameConcatAge")
         ))
@@ -175,6 +176,9 @@ public class UserDsl extends BaseDsl {
                 .fetch();
     }
 
+    public List<UserVO> findUseContainsList() {
+        return null;
+    }
 
     /**
      * count()   总数
@@ -221,6 +225,7 @@ public class UserDsl extends BaseDsl {
                     .execute();
         }
     }
+
 
 
 }

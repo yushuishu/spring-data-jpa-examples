@@ -40,9 +40,15 @@ public class LibraryCollectionVO extends BaseVO<LibraryCollection> {
     @ApiModelProperty(value = "图书标题")
     private String bookTitle;
 
+    @ApiModelProperty(value = "更新时间")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date updateTime;
+
+    @ApiModelProperty(value = "创建时间")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date createTime;
 
     private String dateStr;
 

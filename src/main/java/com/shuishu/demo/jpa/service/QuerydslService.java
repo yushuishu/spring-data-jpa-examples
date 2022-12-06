@@ -99,6 +99,12 @@ public interface QuerydslService {
     List<UserVO> findUseConcatList();
 
     /**
+     * 聚合函数-contains()
+     * @return -
+     */
+    List<UserVO> findUseContainsList();
+
+    /**
      * 聚合函数-DATE_FORMAT()
      * @return -
      */

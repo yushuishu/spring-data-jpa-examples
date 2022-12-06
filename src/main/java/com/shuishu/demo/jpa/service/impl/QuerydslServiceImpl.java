@@ -1,6 +1,7 @@
 package com.shuishu.demo.jpa.service.impl;
 
 
+import cn.hutool.core.date.DatePattern;
 import cn.hutool.core.date.DateUtil;
 import com.shuishu.demo.jpa.common.config.domain.PageDTO;
 import com.shuishu.demo.jpa.common.config.domain.PageVO;
@@ -104,8 +105,6 @@ public class QuerydslServiceImpl implements QuerydslService {
 
     @Override
     public List<LibraryCollectionVO> findUseBetween(LibraryCollectionDTO libraryCollectionDTO) {
-        libraryCollectionDTO.setStartDate(disposeDate(libraryCollectionDTO.getStartDate(), null));
-        libraryCollectionDTO.setEndDate(disposeDate(null, libraryCollectionDTO.getEndDate()));
         return libraryCollectionDsl.findUseBetween(libraryCollectionDTO.getStartDate(), libraryCollectionDTO.getEndDate());
     }
 
@@ -136,6 +135,11 @@ public class QuerydslServiceImpl implements QuerydslService {
     @Override
     public List<UserVO> findUseConcatList() {
         return userDsl.findUseConcatList();
+    }
+
+    @Override
+    public List<UserVO> findUseContainsList() {
+        return userDsl.findUseContainsList();
     }
 
     @Override

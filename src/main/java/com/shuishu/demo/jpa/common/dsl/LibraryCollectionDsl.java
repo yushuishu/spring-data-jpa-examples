@@ -83,9 +83,10 @@ public class LibraryCollectionDsl extends BaseDsl {
                 qLibraryCollection.libraryCollectionId,
                 qLibraryCollection.bookCallNumber,
                 qLibraryCollection.bookTitle,
-                qLibraryCollection.createTime.between(startDate, endDate)
+                qLibraryCollection.createTime
         ))
                 .from(qLibraryCollection)
+                .where(qLibraryCollection.createTime.between(startDate, endDate))
                 .fetch();
     }
 
@@ -118,6 +119,7 @@ public class LibraryCollectionDsl extends BaseDsl {
     }
 
     /**
+     * 查询每个大类的图书数量
      * bookCallNumber： 索书号第一个字母为图书分类的大类
      * @return -
      */

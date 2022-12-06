@@ -15,9 +15,7 @@ import com.shuishu.demo.jpa.common.domain.vo.UserVO;
 import com.shuishu.demo.jpa.service.QuerydslService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -91,8 +89,8 @@ public class QuerydslController {
     @ApiOperationSupport(order = 22)
     @ApiOperation("SQL中的语法IN")
     @ApiGroup(UserDTO.FindUseInList.class)
-    @GetMapping("in/list")
-    public ApiResponse<List<UserVO>> findUseInList(UserDTO userDTO){
+    @PostMapping("in/list")
+    public ApiResponse<List<UserVO>> findUseInList(@RequestBody UserDTO userDTO){
         return ApiResponse.of(querydslService.findUseInList(userDTO.getUserAgeList()));
     }
 
@@ -128,7 +126,7 @@ public class QuerydslController {
     @ApiOperation("聚合函数-contains()")
     @GetMapping("user/contains/find")
     public ApiResponse<List<UserVO>> findUseContainsList(){
-        return ApiResponse.of(querydslService.findUseConcatList());
+        return ApiResponse.of(querydslService.findUseContainsList());
     }
 
     @ApiOperationSupport(order = 41)
@@ -168,7 +166,7 @@ public class QuerydslController {
     }
 
     @ApiOperationSupport(order = 58)
-    @ApiOperation("一对多(条件筛选 并 分页)")
+    @ApiOperation("一对多(条件筛选并分页)")
     @GetMapping("one_to_many/condition/page")
     public ApiResponse<PageVO<ProductVO>> findOneToManyConditionPage(String userName, Integer productCount, PageDTO pageDTO){
         return ApiResponse.of(querydslService.findOneToManyConditionPage(userName, productCount, pageDTO));
