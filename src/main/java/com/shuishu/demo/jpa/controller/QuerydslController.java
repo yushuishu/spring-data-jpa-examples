@@ -77,7 +77,7 @@ public class QuerydslController {
 
     @ApiOperationSupport(order = 15)
     @ApiOperation("模糊检索的用法2-开始位置")
-    @GetMapping("like/2/list")
+    @GetMapping("startsWith/list")
     public ApiResponse<List<UserVO>> findUseStartsWith(String userName){
         return ApiResponse.of(querydslService.findUseStartsWith(userName));
     }
@@ -85,7 +85,7 @@ public class QuerydslController {
     @ApiOperationSupport(order = 18)
     @ApiOperation("模糊检索的用法3-区间")
     @ApiGroup(LibraryCollectionDTO.FindUseBetween.class)
-    @GetMapping("like/3/list")
+    @GetMapping("between/list")
     public ApiResponse<List<LibraryCollectionVO>> findUseBetween(LibraryCollectionDTO libraryCollectionDTO){
         return ApiResponse.of(querydslService.findUseBetween(libraryCollectionDTO));
     }
@@ -141,7 +141,7 @@ public class QuerydslController {
     }
 
     @ApiOperationSupport(order = 45)
-    @ApiOperation("stringTemplate模板时间字符串")
+    @ApiOperation("stringTemplate字符模板")
     @ApiGroup(LibraryCollectionDTO.FindStringTemplateUseList.class)
     @GetMapping("stringTemplate/use/list")
     public ApiResponse<List<LibraryCollectionVO>> findStringTemplateUseList(LibraryCollectionDTO libraryCollectionDTO){
@@ -150,7 +150,7 @@ public class QuerydslController {
 
     @ApiOperationSupport(order = 48)
     @ApiOperation("CASE...WHEN...THEN...")
-    @GetMapping("StringExpression/list")
+    @GetMapping("stringExpression/list")
     public ApiResponse<Map<String, Long>> findStringExpressionUseList(){
         return ApiResponse.of(querydslService.findStringExpressionUseList());
     }

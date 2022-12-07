@@ -116,7 +116,7 @@ public interface QuerydslService {
     List<UserVO> findUseDateFormatList();
 
     /**
-     * 时间版本字符串的使用
+     * 字符模板的使用
      * @param libraryCollectionDTO -
      * @return -
      */

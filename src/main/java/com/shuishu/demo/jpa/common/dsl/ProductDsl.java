@@ -86,6 +86,7 @@ public class ProductDsl extends BaseDsl {
         }
 
         // groupBy: 一对多关系表，分页查询，会存在笛卡尔积，所以查询总数的时候，以主表id分组去重，获取总数
+        // 需要注意builder的条件都是qProduct主表的字段条件
         long count = jpaQueryFactory.select(qProduct.productId).from(qProduct).innerJoin(qOrder).on(qProduct.productId.eq(qOrder.productId))
                 .where(builder).groupBy(qProduct.productId).distinct().fetchCount();
         page.setTotalElements(count);

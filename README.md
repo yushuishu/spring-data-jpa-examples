@@ -73,7 +73,9 @@ Hibernate 中对象的三种状态：
 
 
 - 并发更新(不加锁) transaction/concurrence/update/{userId} 
-数据正常：querydsl的add方法累加数字，一般情况下的更新操作
+
+  数据正常：querydsl的add方法累加数字，一般情况下的更新操作
+
 
 - 并发更新(加锁) transaction/concurrence/lock/update/{userId}
 
@@ -168,26 +170,254 @@ GitHub：https://github.com/querydsl/querydsl
 示例工程版本：4.3.1
 
 
+### 空表数据查询
+
+`url：querydsl/department/list`
+
+查看`queryDsl`和`repository` 查询空数据时，返回的结果 null 还是对象
 
 
+### 等于某个值的-结果集
+
+`url：：eq/list`
+
+查询集合，条件使用等于eq 方法
+<br>
+其它常用方法：
+
+     - eq() ：等于
+     - ne() ：不等于
+     - gt   ：大于
+     - goe  ：大于等于
+     - lt   ：小于
+     - loe  ：小于等于
 
 
+### 等于某个值的-单个对象
+
+`url ：eq/find`
+
+查询当个对象值，条件使用等于eq 方法
 
 
+### 条件封装的使用(BooleanBuilder)
+
+`url ：booleanBuilder/find`
+
+封装条件的函数：
+<br>
+&emsp;&emsp;1、解决条件多，代码长
+<br>
+&emsp;&emsp;2、条件逻辑判断（如：非空判断），方便的灵活使用查询条件
 
 
+### 模糊分页的用法-任意位置
+
+`url ：like/page`
+
+关键字`keyword`模糊匹配查询，使用`like`方法，也是SQL中的`like`函数
 
 
+### 模糊检索的用法2-开始位置
+
+`url ：startsWith/list`
+
+关键字`keyword`模糊匹配查询，条件使用`startsWith`方法，表示指定字段值，必须以`keyword`开头
 
 
+### 模糊检索的用法3-区间
+
+`between/list`
+
+使用示例：`qLibraryCollection.createTime.between(startDate, endDate)`
+
+比如条件时间区间，确定开始时间和结束时间是必须的查询条件，这时候可以使用`between`方法，
+否则只能通过逻辑判断（非空判断），使用`goe`或`loe`方法，最后将时间条件放入到`booleanBuilder`方法中，
 
 
+### SQL中的语法IN
+
+`url ：in/list`
+
+和`eq`等方法的使用一样简单：`qUser.userAge.in(userAgeList)`
 
 
+### 聚合函数-groupBy
+
+`url ：groupBy/list`
+
+聚合函数：分组
 
 
+### 聚合函数-avg()
+
+`url ：user/avg/find`
+
+聚合函数：平均值
 
 
+### 聚合函数-sum()
 
+`url ：user/sum/find`
+
+聚合函数：字段值求和
+
+
+### 聚合函数-concat()
+
+`url ：user/concat/find`
+
+聚合函数：多列字段值拼接
+
+`qUser.userName.concat(":").concat(qUser.userAge.stringValue()).as("nameConcatAge")`
+
+结果：`张三:18`
+
+
+### 聚合函数-contains()
+
+`url ：user/contains/find`
+
+聚合函数：字段的值必须包含指定的值
+
+
+### 聚合函数-DATE_FORMAT()
+
+`url ：user/date_format/find`
+
+时间处理：`DATE_FORMAT({0},'%Y-%m-%d')`
+
+
+### stringTemplate字符模板
+
+`url ：stringTemplate/use/list`
+
+
+### CASE...WHEN...THEN...
+
+`url ：stringExpression/list`
+
+```sql
+SELECT
+CASE
+		
+	WHEN SUBSTRING
+		( librarycol0_.book_call_number, 1, 1 ) IN ( ? , ? , ? ) THEN
+			SUBSTRING ( librarycol0_.book_call_number, 1, 1 ) ELSE'其它' 
+			END AS col_0_0_,
+		COUNT ( librarycol0_.library_collection_id ) AS col_1_0_ 
+	FROM
+		ss_library_collection librarycol0_ 
+	GROUP BY
+		SUBSTRING ( librarycol0_.book_call_number, 1, 1 ) 
+ORDER BY
+	COUNT ( librarycol0_.library_collection_id ) DESC
+```
+
+
+### 多表连接查询
+
+`url ：multi/table/join/list`
+
+leftJoin().on()  ：左连接
+
+rightJoin().on() ：右连接
+
+innerJoin().on() ：内连接
+
+
+### 一对多
+
+`url ：one_to_many/list`
+
+一对多查询，qProduct主表（产品表） qOrder从表（订单表）。
+通过SQL内连接的查询方式，一次性的查询出所有数据，再通过使用`querydsl`的内置函数处理`笛卡尔积`，避免通过业务层逻辑（分组操作或多次执行查询）处理各个产品的所有订单数据
+
+查询示例结果
+```json
+{
+  "code": 200,
+  "message": "操作成功",
+  "data": [
+    {
+      "productId": "1",
+      "productName": "手机",
+      "productDescription": "智能5G手机",
+      "productCount": 500,
+      "productPrice": 5000,
+      "specification": "台",
+      "orderList": [
+        {
+          "createTime": null,
+          "createUserId": null,
+          "updateTime": null,
+          "updateUserId": null,
+          "orderId": "1",
+          "uid": "123123423",
+          "productId": "1",
+          "userName": "张三",
+          "productName": "手机",
+          "price": 50000,
+          "count": "10",
+          "status": 1
+        },
+        {
+          "createTime": null,
+          "createUserId": null,
+          "updateTime": null,
+          "updateUserId": null,
+          "orderId": "2",
+          "uid": "2354634456",
+          "productId": "1",
+          "userName": "李四",
+          "productName": "手机",
+          "price": 5000,
+          "count": "1",
+          "status": 2
+        }
+      ]
+    },
+    {
+      "productId": "2",
+      "productName": "牛肉",
+      "productDescription": "内蒙古牛肉",
+      "productCount": 2500,
+      "productPrice": 80,
+      "specification": "200g",
+      "orderList": [
+        {
+          "createTime": null,
+          "createUserId": null,
+          "updateTime": null,
+          "updateUserId": null,
+          "orderId": "3",
+          "uid": "67324535",
+          "productId": "2",
+          "userName": "张三",
+          "productName": "牛肉",
+          "price": 800,
+          "count": "10",
+          "status": 2
+        }
+      ]
+    }
+  ]
+}
+```
+
+
+### 一对多(条件筛选并分页)
+
+`url ：one_to_many/condition/page`
+
+一对多查询，qProduct主表（产品表） qOrder从表（订单表）。
+在上一个接口示例查询的基础上，增加分页操作。
+
+这里主要关注的是分页中的总数数据查询，因为内连接会产生笛卡尔积，所以需要去重。需要注意是builder的条件都是qProduct主表的字段条件
+
+<br>
+---
+
+<p><span style="float:right;">2022-12-17</span></p>
 
 
