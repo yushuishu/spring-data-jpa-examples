@@ -13,8 +13,12 @@ import java.util.function.Predicate;
 import static java.util.Optional.ofNullable;
 
 /**
- * @author shuishu
- * @date 2022/3/22 14:54
+ * @author ：shuishu
+ * @date   ：2022/3/22 14:54
+ * @IDE    ：IntelliJ IDEA
+ * @Motto  ：ABC(Always Be Coding)
+ * <p></p>
+ * @Description -
  */
 @SuppressWarnings("all")
 public class SwaggerResourcePathWrapper {

@@ -15,8 +15,12 @@ import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 /**
- * @author wuZhenFeng
- * @date 2022/12/3 14:02
+ * @author ：shuishu
+ * @date   ：2022/12/3 14:02
+ * @IDE    ：IntelliJ IDEA
+ * @Motto  ：ABC(Always Be Coding)
+ * <p></p>
+ * @Description -
  */
 @Setter
 @Getter

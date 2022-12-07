@@ -21,13 +21,16 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * @author wuZhenFeng
- * @date 2022/12/3 11:36
+ * @author ：shuishu
+ * @date   ：2022/12/3 11:36
+ * @IDE    ：IntelliJ IDEA
+ * @Motto  ：ABC(Always Be Coding)
+ * <p></p>
+ * @Description -
  */
 @Component
 public class LibraryCollectionDsl extends BaseDsl {
     private QLibraryCollection qLibraryCollection = QLibraryCollection.libraryCollection;
-
 
     /**
      * like("%" + keyword + "%") ：关键字模糊查询
@@ -146,8 +149,5 @@ public class LibraryCollectionDsl extends BaseDsl {
                         )
                 );
     }
-
-
-
 
 }

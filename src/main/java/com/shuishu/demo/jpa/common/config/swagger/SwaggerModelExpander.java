@@ -20,8 +20,12 @@ import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * @author shuishu
- * @date 2022/3/22 14:56
+ * @author ：shuishu
+ * @date   ：2022/3/22 14:56
+ * @IDE    ：IntelliJ IDEA
+ * @Motto  ：ABC(Always Be Coding)
+ * <p></p>
+ * @Description -
  */
 @Component
 @SuppressWarnings("all")

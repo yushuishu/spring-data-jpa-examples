@@ -16,8 +16,12 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.util.Date;
 
 /**
- * @author wuZhenFeng
- * @date 2022/12/3 13:12
+ * @author ：shuishu
+ * @date   ：2022/12/3 13:12
+ * @IDE    ：IntelliJ IDEA
+ * @Motto  ：ABC(Always Be Coding)
+ * <p></p>
+ * @Description -
  */
 @Setter
 @Getter

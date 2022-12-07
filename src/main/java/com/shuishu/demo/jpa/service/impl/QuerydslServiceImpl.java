@@ -1,7 +1,6 @@
 package com.shuishu.demo.jpa.service.impl;
 
 
-import cn.hutool.core.date.DatePattern;
 import cn.hutool.core.date.DateUtil;
 import com.shuishu.demo.jpa.common.config.domain.PageDTO;
 import com.shuishu.demo.jpa.common.config.domain.PageVO;
@@ -25,8 +24,12 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * @author wuZhenFeng
- * @date 2022/11/5 9:28
+ * @author ：shuishu
+ * @date   ：2022/11/5 9:28
+ * @IDE    ：IntelliJ IDEA
+ * @Motto  ：ABC(Always Be Coding)
+ * <p></p>
+ * @Description -
  */
 @Service
 @Transactional(rollbackFor = RuntimeException.class)
@@ -35,10 +38,6 @@ public class QuerydslServiceImpl implements QuerydslService {
     private NullDataRepository nullDataRepository;
     @Resource
     private NullDataDsl nullDataDsl;
-    @Resource
-    private DepartmentRepository departmentRepository;
-    @Resource
-    private DepartmentDsl departmentDsl;
     @Resource
     private UserDsl userDsl;
     @Resource
@@ -138,8 +137,8 @@ public class QuerydslServiceImpl implements QuerydslService {
     }
 
     @Override
-    public List<UserVO> findUseContainsList() {
-        return userDsl.findUseContainsList();
+    public List<UserVO> findUseContainsList(String userName) {
+        return userDsl.findUseContainsList(userName);
     }
 
     @Override

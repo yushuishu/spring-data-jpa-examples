@@ -10,8 +10,12 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * @author shuishu
- * @date 2022/3/22 14:57
+ * @author ：shuishu
+ * @date   ：2022/3/22 14:57
+ * @IDE    ：IntelliJ IDEA
+ * @Motto  ：ABC(Always Be Coding)
+ * <p></p>
+ * @Description -
  */
 @SuppressWarnings("all")
 public class SwaggerOperationWrapper {

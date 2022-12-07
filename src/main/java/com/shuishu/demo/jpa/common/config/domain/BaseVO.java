@@ -5,10 +5,12 @@ import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 
 /**
- * @author shuishu
- * @date 2022/3/22 14:25
- *
- * 视图对象(View Object), 展示层
+ * @author ：shuishu
+ * @date   ：2022/3/22 14:25
+ * @IDE    ：IntelliJ IDEA
+ * @Motto  ：ABC(Always Be Coding)
+ * <p></p>
+ * @Description ：视图对象(View Object), 展示层
  */
 @MappedSuperclass
 public class BaseVO<T extends BasePO> implements Serializable {

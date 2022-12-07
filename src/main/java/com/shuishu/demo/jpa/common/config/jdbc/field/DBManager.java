@@ -11,8 +11,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- * @author shuishu
- * @date 2022/3/22 14:17
+ * @author ：shuishu
+ * @date   ：2022/3/22 14:17
+ * @IDE    ：IntelliJ IDEA
+ * @Motto  ：ABC(Always Be Coding)
+ * <p></p>
+ * @Description ：
  */
 
 @Component

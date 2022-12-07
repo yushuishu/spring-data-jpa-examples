@@ -14,8 +14,12 @@ import static com.google.common.collect.FluentIterable.from;
 import static springfox.documentation.spi.service.contexts.Orderings.resourceGroupComparator;
 
 /**
- * @author shuishu
- * @date 2022/3/22 14:53
+ * @author ：shuishu
+ * @date   ：2022/3/22 14:53
+ * @IDE    ：IntelliJ IDEA
+ * @Motto  ：ABC(Always Be Coding)
+ * <p></p>
+ * @Description -
  */
 @SuppressWarnings("all")
 public class SwaggerResourceGroups {

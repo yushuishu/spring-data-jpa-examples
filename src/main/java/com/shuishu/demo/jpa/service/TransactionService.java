@@ -2,8 +2,12 @@ package com.shuishu.demo.jpa.service;
 
 
 /**
- * @author shuishu
- * @date 2022/10/29 8:38
+ * @author ：shuishu
+ * @date   ：2022/10/29 8:38
+ * @IDE    ：IntelliJ IDEA
+ * @Motto  ：ABC(Always Be Coding)
+ * <p></p>
+ * @Description -
  */
 
 public interface TransactionService {

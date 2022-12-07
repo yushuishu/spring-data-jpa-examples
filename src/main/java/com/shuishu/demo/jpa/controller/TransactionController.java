@@ -14,8 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 
 /**
- * @author shuishu
- * @date 2022/10/29 8:38
+ * @author ：shuishu
+ * @date   ：2022/10/29 8:38
+ * @IDE    ：IntelliJ IDEA
+ * @Motto  ：ABC(Always Be Coding)
+ * <p></p>
+ * @Description -
  */
 @Api(tags = "事务、并发")
 @RestController

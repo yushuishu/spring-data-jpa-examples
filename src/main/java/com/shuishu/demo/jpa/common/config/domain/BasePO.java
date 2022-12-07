@@ -18,10 +18,12 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @author shuishu
- * @date 2022/3/22 14:23
- *
- * 持久化对象(Persistent Object)
+ * @author ：shuishu
+ * @date   ：2022/3/22 14:23
+ * @IDE    ：IntelliJ IDEA
+ * @Motto  ：ABC(Always Be Coding)
+ * <p></p>
+ * @Description ：持久化对象(Persistent Object)
  */
 @Setter
 @Getter

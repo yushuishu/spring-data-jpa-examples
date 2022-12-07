@@ -4,8 +4,12 @@ package com.shuishu.demo.jpa.common.config.id;
 import com.alibaba.fastjson.JSONObject;
 
 /**
- * @author shuishu
- * @date 2022/3/22 14:12
+ * @author ：shuishu
+ * @date   ：2022/3/22 14:12
+ * @IDE    ：IntelliJ IDEA
+ * @Motto  ：ABC(Always Be Coding)
+ * <p></p>
+ * @Description ：
  */
 
 public class IdGenerateUtil {

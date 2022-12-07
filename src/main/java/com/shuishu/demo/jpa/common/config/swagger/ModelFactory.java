@@ -9,8 +9,12 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * @author shuishu
- * @date 2022/3/22 14:47
+ * @author ：shuishu
+ * @date   ：2022/3/22 14:47
+ * @IDE    ：IntelliJ IDEA
+ * @Motto  ：ABC(Always Be Coding)
+ * <p></p>
+ * @Description -
  */
 @SuppressWarnings("all")
 public class ModelFactory {

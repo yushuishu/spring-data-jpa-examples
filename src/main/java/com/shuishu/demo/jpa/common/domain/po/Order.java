@@ -16,6 +16,15 @@ import org.hibernate.annotations.GenericGenerator;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+
+/**
+ * @author ：shuishu
+ * @date   ：2022/11/27 16:13
+ * @IDE    ：IntelliJ IDEA
+ * @Motto  ：ABC(Always Be Coding)
+ * <p></p>
+ * @Description -
+ */
 @Setter
 @Getter
 @ToString

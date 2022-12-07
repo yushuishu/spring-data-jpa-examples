@@ -13,10 +13,12 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 /**
- * @author shuishu
- * @date 2022/3/22 14:14
- *
- * QueryDsl配置
+ * @author ：shuishu
+ * @date   ：2022/3/22 14:14
+ * @IDE    ：IntelliJ IDEA
+ * @Motto  ：ABC(Always Be Coding)
+ * <p></p>
+ * @Description ：QueryDsl配置
  */
 @Configuration
 public class SqlQueryConfiguration {

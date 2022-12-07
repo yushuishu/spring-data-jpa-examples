@@ -9,12 +9,14 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 /**
- * @author shuishu
- * 2022/10/29 9:40
- *
- * EnableJpaRepositories: 扫描继承 BaseRepository 的类
- * EntityScan: 扫描实体类
- * EnableJpaAuditing: 1、jpa开启实体类监听 2、开启实体类字段注解
+ * @author ：shuishu
+ * @date   ：2022/10/29 9:40
+ * @IDE    ：IntelliJ IDEA
+ * @Motto  ：ABC(Always Be Coding)
+ * <p></p>
+ * @Description - EnableJpaRepositories: 扫描继承 BaseRepository 的类
+ *                EntityScan: 扫描实体类
+ *                EnableJpaAuditing: 1、jpa开启实体类监听 2、开启实体类字段注解
  */
 @SpringBootApplication
 @ComponentScan(basePackages={"com.shuishu.demo.jpa.**", "cn.hutool.extra.spring"})

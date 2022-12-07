@@ -18,8 +18,12 @@ import org.springframework.util.StringUtils;
 import java.util.List;
 
 /**
- * @author wuZhenFeng
- * @date 2022/11/27 16:21
+ * @author ：shuishu
+ * @date   ：2022/11/27 16:21
+ * @IDE    ：IntelliJ IDEA
+ * @Motto  ：ABC(Always Be Coding)
+ * <p></p>
+ * @Description -
  */
 @Component
 public class ProductDsl extends BaseDsl {

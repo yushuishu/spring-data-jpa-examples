@@ -7,8 +7,12 @@ import springfox.documentation.schema.ModelProperty;
 import java.util.Objects;
 
 /**
- * @author shuishu
- * @date 2022/3/22 14:48
+ * @author ：shuishu
+ * @date   ：2022/3/22 14:48
+ * @IDE    ：IntelliJ IDEA
+ * @Motto  ：ABC(Always Be Coding)
+ * <p></p>
+ * @Description -
  */
 @SuppressWarnings("all")
 public class ModelPropertyFactory {

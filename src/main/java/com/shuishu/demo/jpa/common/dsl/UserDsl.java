@@ -17,8 +17,12 @@ import org.springframework.util.StringUtils;
 import java.util.List;
 
 /**
- * @author shuishu
- * @date 2022/10/29 17:22
+ * @author ：shuishu
+ * @date   ：2022/10/29 17:22
+ * @IDE    ：IntelliJ IDEA
+ * @Motto  ：ABC(Always Be Coding)
+ * <p></p>
+ * @Description -
  */
 @Component
 public class UserDsl extends BaseDsl {
@@ -176,8 +180,26 @@ public class UserDsl extends BaseDsl {
                 .fetch();
     }
 
-    public List<UserVO> findUseContainsList() {
-        return null;
+    /**
+     * 指定字段包含指定值的条件
+     * contains ： 包含
+     * containsIgnoreCase ：不区分大小写
+     * @param userName -
+     * @return -
+     */
+    public List<UserVO> findUseContainsList(String userName) {
+        BooleanBuilder builder = new BooleanBuilder();
+        if (StringUtils.hasText(userName)){
+            builder.and(qUser.userName.contains(userName));
+        }
+        return jpaQueryFactory.select(Projections.fields(UserVO.class,
+                qUser.userId,
+                qUser.userName,
+                qUser.userAge
+        ))
+                .from(qUser)
+                .where(builder)
+                .fetch();
     }
 
     /**

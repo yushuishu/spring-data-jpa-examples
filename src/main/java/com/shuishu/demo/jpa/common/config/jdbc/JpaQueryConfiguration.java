@@ -11,10 +11,12 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 /**
- * @author shuishu
- * @date 2022/3/22 14:08
- *
- * JPA配置
+ * @author ：shuishu
+ * @date   ：2022/3/22 14:08
+ * @IDE    ：IntelliJ IDEA
+ * @Motto  ：ABC(Always Be Coding)
+ * <p></p>
+ * @Description ：JPA配置
  */
 
 @Configuration

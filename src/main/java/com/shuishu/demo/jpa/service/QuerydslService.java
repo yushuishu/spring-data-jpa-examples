@@ -14,8 +14,12 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author wuZhenFeng
- * @date 2022/11/5 9:28
+ * @author ：shuishu
+ * @date   ：2022/11/5 9:28
+ * @IDE    ：IntelliJ IDEA
+ * @Motto  ：ABC(Always Be Coding)
+ * <p></p>
+ * @Description -
  */
 
 public interface QuerydslService {
@@ -100,9 +104,10 @@ public interface QuerydslService {
 
     /**
      * 聚合函数-contains()
+     * @param userName - 用户名
      * @return -
      */
-    List<UserVO> findUseContainsList();
+    List<UserVO> findUseContainsList(String userName);
 
     /**
      * 聚合函数-DATE_FORMAT()

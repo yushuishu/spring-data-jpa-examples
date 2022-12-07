@@ -8,8 +8,12 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 
 /**
- * @author shuishu
- * @date 2022/3/22 14:32
+ * @author ：shuishu
+ * @date   ：2022/3/22 14:32
+ * @IDE    ：IntelliJ IDEA
+ * @Motto  ：ABC(Always Be Coding)
+ * <p></p>
+ * @Description ：
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @ApiModel

@@ -7,8 +7,12 @@ import com.shuishu.demo.jpa.common.domain.po.QProduct;
 import org.springframework.stereotype.Component;
 
 /**
- * @author wuZhenFeng
- * @date 2022/11/27 16:21
+ * @author ：shuishu
+ * @date   ：2022/11/27 16:21
+ * @IDE    ：IntelliJ IDEA
+ * @Motto  ：ABC(Always Be Coding)
+ * <p></p>
+ * @Description -
  */
 @Component
 public class OrderDsl extends BaseDsl {

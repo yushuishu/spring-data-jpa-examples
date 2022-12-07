@@ -11,8 +11,12 @@ import javax.persistence.LockModeType;
 import java.util.Optional;
 
 /**
- * @author shuishu
- * @date 2022/10/29 17:22
+ * @author ：shuishu
+ * @date   ：2022/10/29 17:22
+ * @IDE    ：IntelliJ IDEA
+ * @Motto  ：ABC(Always Be Coding)
+ * <p></p>
+ * @Description -
  */
 
 public interface UserRepository extends BaseRepository<User, Long> {

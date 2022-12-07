@@ -20,10 +20,12 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author shuishu
- * @date 2022/3/22 14:28
- *
- * 全局异常
+ * @author ：shuishu
+ * @date   ：2022/3/22 14:28
+ * @IDE    ：IntelliJ IDEA
+ * @Motto  ：ABC(Always Be Coding)
+ * <p></p>
+ * @Description ：全局异常
  */
 @ControllerAdvice
 public class GlobalExceptionHandler {

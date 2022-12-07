@@ -7,8 +7,12 @@ import com.shuishu.demo.jpa.common.config.swagger.ApiRequestInclude;
 import javax.validation.constraints.Min;
 
 /**
- * @author shuishu
- * @date 2022/3/22 14:37
+ * @author ：shuishu
+ * @date   ：2022/3/22 14:37
+ * @IDE    ：IntelliJ IDEA
+ * @Motto  ：ABC(Always Be Coding)
+ * <p></p>
+ * @Description ：
  */
 
 public class PageDTO {

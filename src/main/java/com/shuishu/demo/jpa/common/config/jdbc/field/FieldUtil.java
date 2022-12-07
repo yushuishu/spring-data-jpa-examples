@@ -15,6 +15,10 @@ import java.util.regex.Pattern;
 /**
  * @author shuishu
  * @date 2022/3/22 14:18
+ * @IDE    ：IntelliJ IDEA
+ * @Motto  ：ABC(Always Be Coding)
+ * <p></p>
+ * @Description ：
  */
 
 public class FieldUtil {

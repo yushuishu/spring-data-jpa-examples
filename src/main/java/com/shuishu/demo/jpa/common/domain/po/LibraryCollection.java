@@ -13,8 +13,12 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import javax.persistence.*;
 
 /**
- * @author wuZhenFeng
- * @date 2022/12/3 11:32
+ * @author ：shuishu
+ * @date   ：2022/12/3 11:32
+ * @IDE    ：IntelliJ IDEA
+ * @Motto  ：ABC(Always Be Coding)
+ * <p></p>
+ * @Description -
  */
 @Setter
 @Getter

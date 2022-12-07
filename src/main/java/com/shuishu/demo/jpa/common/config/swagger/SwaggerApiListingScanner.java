@@ -38,8 +38,12 @@ import static springfox.documentation.spi.service.contexts.Orderings.resourceGro
 import static springfox.documentation.spring.web.paths.Paths.ROOT;
 
 /**
- * @author shuishu
- * @date 2022/3/22 14:53
+ * @author ：shuishu
+ * @date   ：2022/3/22 14:53
+ * @IDE    ：IntelliJ IDEA
+ * @Motto  ：ABC(Always Be Coding)
+ * <p></p>
+ * @Description -
  */
 @Primary
 @Component

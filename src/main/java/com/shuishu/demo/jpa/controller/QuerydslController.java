@@ -22,8 +22,12 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author wuZhenFeng
- * @date 2022/11/5 9:27
+ * @author ：shuishu
+ * @date   ：2022/11/5 9:27
+ * @IDE    ：IntelliJ IDEA
+ * @Motto  ：ABC(Always Be Coding)
+ * <p></p>
+ * @Description -
  */
 @Api(tags = "Querydsl使用")
 @RestController
@@ -125,8 +129,8 @@ public class QuerydslController {
     @ApiOperationSupport(order = 38)
     @ApiOperation("聚合函数-contains()")
     @GetMapping("user/contains/find")
-    public ApiResponse<List<UserVO>> findUseContainsList(){
-        return ApiResponse.of(querydslService.findUseContainsList());
+    public ApiResponse<List<UserVO>> findUseContainsList(String userName){
+        return ApiResponse.of(querydslService.findUseContainsList(userName));
     }
 
     @ApiOperationSupport(order = 41)

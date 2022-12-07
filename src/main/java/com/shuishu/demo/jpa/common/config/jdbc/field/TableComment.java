@@ -24,8 +24,12 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * @author shuishu
- * @date 2022/3/22 14:19
+ * @author ：shuishu
+ * @date   ：2022/3/22 14:19
+ * @IDE    ：IntelliJ IDEA
+ * @Motto  ：ABC(Always Be Coding)
+ * <p></p>
+ * @Description ：
  */
 @Component
 @ConditionalOnProperty(prefix = "ss", name = "init", havingValue = "true")

@@ -16,8 +16,12 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * @author shuishu
- * @date 2022/3/22 14:38
+ * @author ：shuishu
+ * @date   ：2022/3/22 14:38
+ * @IDE    ：IntelliJ IDEA
+ * @Motto  ：ABC(Always Be Coding)
+ * <p></p>
+ * @Description ：
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PageVO<T> implements Serializable {

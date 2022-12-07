@@ -9,8 +9,12 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 /**
- * @author wuZhenFeng
- * @date 2022/11/17 9:40
+ * @author ：shuishu
+ * @date   ：2022/11/17 9:40
+ * @IDE    ：IntelliJ IDEA
+ * @Motto  ：ABC(Always Be Coding)
+ * <p></p>
+ * @Description -
  */
 @Component
 public class NullDataDsl extends BaseDsl {
