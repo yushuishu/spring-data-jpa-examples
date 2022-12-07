@@ -1,7 +1,8 @@
 # spring-data-jpa-examples
 探索spring-data-jpa的使用
 
-
+<br>
+<br>
 
 # 技术栈
 Spring Boot: 2.3.3.RELEASE
@@ -26,7 +27,8 @@ guava: 31.1-jre
 
 com.github.xiaoymin.knife4j-spring-boot-starter: 2.0.9
 
-
+<br>
+<br>
 
 # 包路径详情
 
@@ -49,7 +51,8 @@ com.github.xiaoymin.knife4j-spring-boot-starter: 2.0.9
         - impl          (service接口实现)
 ```
 
-
+<br>
+<br>
 
 # 知识点
 
@@ -65,9 +68,10 @@ Hibernate 中对象的三种状态：
 - clear()：清楚session中的所有缓存，所有持久化对象变为游离态
 - evict(obj)：把某个持久化状态的对象从session中清除，该对象变为游离态
 
+<br>
+<br>
 
-
-# 测试和报告
+# 测试
 
 ## TransactionController （事务、并发）
 
@@ -107,9 +111,9 @@ Hibernate 中对象的三种状态：
   数据没有更新：使用 new 创建新的对象，将查询出来的对象的值（持久态对象）copy 到 新创建的对象中，使用 set 操作更新，观察数据库
 
 
+<br>
 
-
-## 结论
+### 结论
 
 1、JPA查询到的对象属性被set后，自动执行update
 
@@ -154,10 +158,10 @@ entityManager.unwrap(Session.class).evict(user);
 - 当前事务结束
 
 
+<br>
+<br>
 
-
-
-## QueryDslController  （QueryDsl的高级应用）
+## QueryDslController  （QueryDsl使用）
 
 ### querydsl
 
@@ -169,6 +173,7 @@ GitHub：https://github.com/querydsl/querydsl
 
 示例工程版本：4.3.1
 
+<br>
 
 ### 空表数据查询
 
@@ -176,6 +181,7 @@ GitHub：https://github.com/querydsl/querydsl
 
 查看`queryDsl`和`repository` 查询空数据时，返回的结果 null 还是对象
 
+<br>
 
 ### 等于某个值的-结果集
 
@@ -192,6 +198,7 @@ GitHub：https://github.com/querydsl/querydsl
      - lt   ：小于
      - loe  ：小于等于
 
+<br>
 
 ### 等于某个值的-单个对象
 
@@ -199,6 +206,7 @@ GitHub：https://github.com/querydsl/querydsl
 
 查询当个对象值，条件使用等于eq 方法
 
+<br>
 
 ### 条件封装的使用(BooleanBuilder)
 
@@ -210,6 +218,7 @@ GitHub：https://github.com/querydsl/querydsl
 <br>
 &emsp;&emsp;2、条件逻辑判断（如：非空判断），方便的灵活使用查询条件
 
+<br>
 
 ### 模糊分页的用法-任意位置
 
@@ -217,6 +226,7 @@ GitHub：https://github.com/querydsl/querydsl
 
 关键字`keyword`模糊匹配查询，使用`like`方法，也是SQL中的`like`函数
 
+<br>
 
 ### 模糊检索的用法2-开始位置
 
@@ -224,6 +234,7 @@ GitHub：https://github.com/querydsl/querydsl
 
 关键字`keyword`模糊匹配查询，条件使用`startsWith`方法，表示指定字段值，必须以`keyword`开头
 
+<br>
 
 ### 模糊检索的用法3-区间
 
@@ -234,6 +245,7 @@ GitHub：https://github.com/querydsl/querydsl
 比如条件时间区间，确定开始时间和结束时间是必须的查询条件，这时候可以使用`between`方法，
 否则只能通过逻辑判断（非空判断），使用`goe`或`loe`方法，最后将时间条件放入到`booleanBuilder`方法中，
 
+<br>
 
 ### SQL中的语法IN
 
@@ -241,6 +253,7 @@ GitHub：https://github.com/querydsl/querydsl
 
 和`eq`等方法的使用一样简单：`qUser.userAge.in(userAgeList)`
 
+<br>
 
 ### 聚合函数-groupBy
 
@@ -248,6 +261,7 @@ GitHub：https://github.com/querydsl/querydsl
 
 聚合函数：分组
 
+<br>
 
 ### 聚合函数-avg()
 
@@ -255,6 +269,7 @@ GitHub：https://github.com/querydsl/querydsl
 
 聚合函数：平均值
 
+<br>
 
 ### 聚合函数-sum()
 
@@ -262,6 +277,7 @@ GitHub：https://github.com/querydsl/querydsl
 
 聚合函数：字段值求和
 
+<br>
 
 ### 聚合函数-concat()
 
@@ -273,6 +289,7 @@ GitHub：https://github.com/querydsl/querydsl
 
 结果：`张三:18`
 
+<br>
 
 ### 聚合函数-contains()
 
@@ -280,6 +297,7 @@ GitHub：https://github.com/querydsl/querydsl
 
 聚合函数：字段的值必须包含指定的值
 
+<br>
 
 ### 聚合函数-DATE_FORMAT()
 
@@ -287,11 +305,13 @@ GitHub：https://github.com/querydsl/querydsl
 
 时间处理：`DATE_FORMAT({0},'%Y-%m-%d')`
 
+<br>
 
 ### stringTemplate字符模板
 
 `url ：querydsl/stringTemplate/use/list`
 
+<br>
 
 ### CASE...WHEN...THEN...
 
@@ -314,6 +334,7 @@ ORDER BY
 	COUNT ( librarycol0_.library_collection_id ) DESC
 ```
 
+<br>
 
 ### 多表连接查询
 
@@ -325,6 +346,7 @@ rightJoin().on() ：右连接
 
 innerJoin().on() ：内连接
 
+<br>
 
 ### 一对多
 
@@ -405,6 +427,7 @@ innerJoin().on() ：内连接
 }
 ```
 
+<br>
 
 ### 一对多(条件筛选并分页)
 
@@ -415,8 +438,9 @@ innerJoin().on() ：内连接
 
 这里主要关注的是分页中的总数数据查询，因为内连接会产生笛卡尔积，所以需要去重。需要注意是builder的条件都是qProduct主表的字段条件
 
+
 <br>
----
+<hr>
 
 <p><span style="float:right;">2022-12-17</span></p>
 
