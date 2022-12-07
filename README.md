@@ -179,7 +179,7 @@ GitHub：https://github.com/querydsl/querydsl
 
 ### 等于某个值的-结果集
 
-`url：：eq/list`
+`url：：querydsl/eq/list`
 
 查询集合，条件使用等于eq 方法
 <br>
@@ -195,14 +195,14 @@ GitHub：https://github.com/querydsl/querydsl
 
 ### 等于某个值的-单个对象
 
-`url ：eq/find`
+`url ：querydsl/eq/find`
 
 查询当个对象值，条件使用等于eq 方法
 
 
 ### 条件封装的使用(BooleanBuilder)
 
-`url ：booleanBuilder/find`
+`url ：querydsl/booleanBuilder/find`
 
 封装条件的函数：
 <br>
@@ -213,21 +213,21 @@ GitHub：https://github.com/querydsl/querydsl
 
 ### 模糊分页的用法-任意位置
 
-`url ：like/page`
+`url ：querydsl/like/page`
 
 关键字`keyword`模糊匹配查询，使用`like`方法，也是SQL中的`like`函数
 
 
 ### 模糊检索的用法2-开始位置
 
-`url ：startsWith/list`
+`url ：querydsl/startsWith/list`
 
 关键字`keyword`模糊匹配查询，条件使用`startsWith`方法，表示指定字段值，必须以`keyword`开头
 
 
 ### 模糊检索的用法3-区间
 
-`between/list`
+`url ：querydsl/between/list`
 
 使用示例：`qLibraryCollection.createTime.between(startDate, endDate)`
 
@@ -237,35 +237,35 @@ GitHub：https://github.com/querydsl/querydsl
 
 ### SQL中的语法IN
 
-`url ：in/list`
+`url ：querydsl/in/list`
 
 和`eq`等方法的使用一样简单：`qUser.userAge.in(userAgeList)`
 
 
 ### 聚合函数-groupBy
 
-`url ：groupBy/list`
+`url ：querydsl/groupBy/list`
 
 聚合函数：分组
 
 
 ### 聚合函数-avg()
 
-`url ：user/avg/find`
+`url ：querydsl/user/avg/find`
 
 聚合函数：平均值
 
 
 ### 聚合函数-sum()
 
-`url ：user/sum/find`
+`url ：querydsl/user/sum/find`
 
 聚合函数：字段值求和
 
 
 ### 聚合函数-concat()
 
-`url ：user/concat/find`
+`url ：querydsl/user/concat/find`
 
 聚合函数：多列字段值拼接
 
@@ -276,26 +276,26 @@ GitHub：https://github.com/querydsl/querydsl
 
 ### 聚合函数-contains()
 
-`url ：user/contains/find`
+`url ：querydsl/user/contains/find`
 
 聚合函数：字段的值必须包含指定的值
 
 
 ### 聚合函数-DATE_FORMAT()
 
-`url ：user/date_format/find`
+`url ：querydsl/user/date_format/find`
 
 时间处理：`DATE_FORMAT({0},'%Y-%m-%d')`
 
 
 ### stringTemplate字符模板
 
-`url ：stringTemplate/use/list`
+`url ：querydsl/stringTemplate/use/list`
 
 
 ### CASE...WHEN...THEN...
 
-`url ：stringExpression/list`
+`url ：querydsl/stringExpression/list`
 
 ```sql
 SELECT
@@ -317,7 +317,7 @@ ORDER BY
 
 ### 多表连接查询
 
-`url ：multi/table/join/list`
+`url ：querydsl/multi/table/join/list`
 
 leftJoin().on()  ：左连接
 
@@ -328,7 +328,7 @@ innerJoin().on() ：内连接
 
 ### 一对多
 
-`url ：one_to_many/list`
+`url ：querydsl/one_to_many/list`
 
 一对多查询，qProduct主表（产品表） qOrder从表（订单表）。
 通过SQL内连接的查询方式，一次性的查询出所有数据，再通过使用`querydsl`的内置函数处理`笛卡尔积`，避免通过业务层逻辑（分组操作或多次执行查询）处理各个产品的所有订单数据
@@ -408,7 +408,7 @@ innerJoin().on() ：内连接
 
 ### 一对多(条件筛选并分页)
 
-`url ：one_to_many/condition/page`
+`url ：querydsl/one_to_many/condition/page`
 
 一对多查询，qProduct主表（产品表） qOrder从表（订单表）。
 在上一个接口示例查询的基础上，增加分页操作。
