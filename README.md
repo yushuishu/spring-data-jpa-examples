@@ -191,12 +191,12 @@ GitHub：https://github.com/querydsl/querydsl
 <br>
 其它常用方法：
 
-     - eq() ：等于
-     - ne() ：不等于
-     - gt   ：大于
-     - goe  ：大于等于
-     - lt   ：小于
-     - loe  ：小于等于
+     - eq()   ：等于
+     - ne()   ：不等于
+     - gt()   ：大于
+     - goe()  ：大于等于
+     - lt()   ：小于
+     - loe()  ：小于等于
 
 <br>
 
@@ -257,7 +257,7 @@ GitHub：https://github.com/querydsl/querydsl
 
 ### 排序Order(一个条件)
 
-`rul ：querydsl/OrderSpecifier/list`
+`url ：querydsl/OrderSpecifier/list`
 
 简单排序`Order`使用，都是把条件直接作为参数。
 
@@ -268,7 +268,7 @@ OrderSpecifier函数可以像booleanBuilder函数一样，将排序条件封装�
 
 ### 排序Order(多个条件)
 
-`rul ：querydsl/more/OrderSpecifier/list`
+`url ：querydsl/more/OrderSpecifier/list`
 
 使用`OrderSpecifier`数组封装：多个排序条件封装成`OrderSpecifier`数组对象。
 
@@ -278,7 +278,7 @@ OrderSpecifier函数可以像booleanBuilder函数一样，将排序条件封装�
 
 ### 排序Order(多个条件逻辑判断)
 
-`rul ：querydsl/more/logic/OrderSpecifier/list`
+`url ：querydsl/more/logic/OrderSpecifier/list`
 
 模拟业务逻辑，加入一些逻辑判断，根据条件选择性的加入排序字段。
 
