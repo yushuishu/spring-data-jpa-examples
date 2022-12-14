@@ -79,6 +79,28 @@ public interface QuerydslService {
     List<UserVO> findUseInList(List<Integer> userAgeList);
 
     /**
+     * 排序Order条件对象，提取排序条件
+     *      api orderSpecifier from querydsl
+     * @return -
+     */
+    List<UserVO> findUseOrderSpecifierList();
+
+    /**
+     * 排序Order条件对象，提取排序条件
+     *      api orderSpecifier from querydsl
+     * @return -
+     */
+    List<UserVO> findUseMoreOrderSpecifierList();
+
+    /**
+     * 排序Order条件对象，提取排序条件，加入逻辑判断
+     *      api orderSpecifier from querydsl
+     * @param order - DESC 降序  ASC 生序
+     * @return -
+     */
+    List<UserVO> findUseMoreLogicOrderSpecifierList(String order);
+
+    /**
      * 聚合函数-groupBy
      * @return -
      */

@@ -15,6 +15,7 @@ import com.shuishu.demo.jpa.common.domain.vo.UserVO;
 import com.shuishu.demo.jpa.service.QuerydslService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -99,48 +100,69 @@ public class QuerydslController {
     }
 
     @ApiOperationSupport(order = 25)
+    @ApiOperation("排序Order(一个条件)")
+    @PostMapping("OrderSpecifier/list")
+    public ApiResponse<List<UserVO>> findUseOrderSpecifierList(){
+        return ApiResponse.of(querydslService.findUseOrderSpecifierList());
+    }
+
+    @ApiOperationSupport(order = 28)
+    @ApiOperation("排序Order(多个条件)")
+    @PostMapping("more/OrderSpecifier/list")
+    public ApiResponse<List<UserVO>> findUseMoreOrderSpecifierList(){
+        return ApiResponse.of(querydslService.findUseMoreOrderSpecifierList());
+    }
+
+    @ApiOperationSupport(order = 28)
+    @ApiOperation("排序Order(多个条件逻辑判断)")
+    @PostMapping("more/logic/OrderSpecifier/list")
+    public ApiResponse<List<UserVO>> findUseMoreLogicOrderSpecifierList(@RequestParam(name = "order", defaultValue = "DESC") String order){
+        return ApiResponse.of(querydslService.findUseMoreLogicOrderSpecifierList(order));
+    }
+
+    @ApiOperationSupport(order = 31)
     @ApiOperation("聚合函数-groupBy")
     @GetMapping("groupBy/list")
     public ApiResponse<List<UserVO>> findUseGroupByList(){
         return ApiResponse.of(querydslService.findUseGroupByList());
     }
 
-    @ApiOperationSupport(order = 28)
+    @ApiOperationSupport(order = 35)
     @ApiOperation("聚合函数-avg()")
     @GetMapping("user/avg/find")
     public ApiResponse<UserVO> findUseAvg(){
         return ApiResponse.of(querydslService.findUseAvg());
     }
 
-    @ApiOperationSupport(order = 31)
+    @ApiOperationSupport(order = 38)
     @ApiOperation("聚合函数-sum()")
     @GetMapping("user/sum/find")
     public ApiResponse<UserVO> findUseSum(){
         return ApiResponse.of(querydslService.findUseSum());
     }
 
-    @ApiOperationSupport(order = 35)
+    @ApiOperationSupport(order = 41)
     @ApiOperation("聚合函数-concat()")
     @GetMapping("user/concat/find")
     public ApiResponse<List<UserVO>> findUseConcatList(){
         return ApiResponse.of(querydslService.findUseConcatList());
     }
 
-    @ApiOperationSupport(order = 38)
+    @ApiOperationSupport(order = 45)
     @ApiOperation("聚合函数-contains()")
     @GetMapping("user/contains/find")
     public ApiResponse<List<UserVO>> findUseContainsList(String userName){
         return ApiResponse.of(querydslService.findUseContainsList(userName));
     }
 
-    @ApiOperationSupport(order = 41)
+    @ApiOperationSupport(order = 48)
     @ApiOperation("聚合函数-DATE_FORMAT()")
     @GetMapping("user/date_format/find")
     public ApiResponse<List<UserVO>> findUseDateFormatList(){
         return ApiResponse.of(querydslService.findUseDateFormatList());
     }
 
-    @ApiOperationSupport(order = 45)
+    @ApiOperationSupport(order = 51)
     @ApiOperation("stringTemplate字符模板")
     @ApiGroup(LibraryCollectionDTO.FindStringTemplateUseList.class)
     @GetMapping("stringTemplate/use/list")
@@ -148,28 +170,28 @@ public class QuerydslController {
         return ApiResponse.of(querydslService.findStringTemplateUseList(libraryCollectionDTO));
     }
 
-    @ApiOperationSupport(order = 48)
+    @ApiOperationSupport(order = 55)
     @ApiOperation("CASE...WHEN...THEN...")
     @GetMapping("stringExpression/list")
     public ApiResponse<Map<String, Long>> findStringExpressionUseList(){
         return ApiResponse.of(querydslService.findStringExpressionUseList());
     }
 
-    @ApiOperationSupport(order = 51)
+    @ApiOperationSupport(order = 59)
     @ApiOperation("多表连接查询")
     @GetMapping("multi/table/join/list")
     public ApiResponse<List<UserVO>> findMultiTableJoinList(){
         return ApiResponse.of(querydslService.findMultiTableJoinList());
     }
 
-    @ApiOperationSupport(order = 55)
+    @ApiOperationSupport(order = 63)
     @ApiOperation("一对多")
     @GetMapping("one_to_many/list")
     public ApiResponse<List<ProductVO>> findOneToManyList(){
         return ApiResponse.of(querydslService.findOneToManyList());
     }
 
-    @ApiOperationSupport(order = 58)
+    @ApiOperationSupport(order = 67)
     @ApiOperation("一对多(条件筛选并分页)")
     @GetMapping("one_to_many/condition/page")
     public ApiResponse<PageVO<ProductVO>> findOneToManyConditionPage(String userName, Integer productCount, PageDTO pageDTO){

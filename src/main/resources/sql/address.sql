@@ -29,17 +29,17 @@ CREATE TABLE "public"."ss_address" (
 -- ----------------------------
 -- Records of ss_address
 -- ----------------------------
-INSERT INTO "public"."ss_address" VALUES (3, '常山');
-INSERT INTO "public"."ss_address" VALUES (2, '南阳');
-INSERT INTO "public"."ss_address" VALUES (1, '安徽庐江县');
-INSERT INTO "public"."ss_address" VALUES (4, '安徽亳州');
-INSERT INTO "public"."ss_address" VALUES (8, '五原郡九原县');
-INSERT INTO "public"."ss_address" VALUES (9, '汝南汝阳');
-INSERT INTO "public"."ss_address" VALUES (10, '江苏徐州');
-INSERT INTO "public"."ss_address" VALUES (11, '山西省平陆县');
-INSERT INTO "public"."ss_address" VALUES (6, '山西省解县');
-INSERT INTO "public"."ss_address" VALUES (7, '河北省保定');
-INSERT INTO "public"."ss_address" VALUES (5, '河北省楼桑村');
+INSERT INTO "ss_address" ("address_id", "address_description") VALUES (3, '常山');
+INSERT INTO "ss_address" ("address_id", "address_description") VALUES (2, '南阳');
+INSERT INTO "ss_address" ("address_id", "address_description") VALUES (1, '安徽庐江县');
+INSERT INTO "ss_address" ("address_id", "address_description") VALUES (4, '安徽亳州');
+INSERT INTO "ss_address" ("address_id", "address_description") VALUES (8, '五原郡九原县');
+INSERT INTO "ss_address" ("address_id", "address_description") VALUES (9, '汝南汝阳');
+INSERT INTO "ss_address" ("address_id", "address_description") VALUES (10, '江苏徐州');
+INSERT INTO "ss_address" ("address_id", "address_description") VALUES (11, '山西省平陆县');
+INSERT INTO "ss_address" ("address_id", "address_description") VALUES (6, '山西省解县');
+INSERT INTO "ss_address" ("address_id", "address_description") VALUES (7, '河北省保定');
+INSERT INTO "ss_address" ("address_id", "address_description") VALUES (5, '河北省楼桑村');
 
 -- ----------------------------
 -- Primary Key structure for table ss_address

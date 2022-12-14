@@ -113,6 +113,21 @@ public class QuerydslServiceImpl implements QuerydslService {
     }
 
     @Override
+    public List<UserVO> findUseOrderSpecifierList() {
+        return userDsl.findUseOrderSpecifierList();
+    }
+
+    @Override
+    public List<UserVO> findUseMoreOrderSpecifierList() {
+        return userDsl.findUseMoreOrderSpecifierList();
+    }
+
+    @Override
+    public List<UserVO> findUseMoreLogicOrderSpecifierList(String order) {
+        return userDsl.findUseMoreLogicOrderSpecifierList(order);
+    }
+
+    @Override
     public List<UserVO> findUseGroupByList() {
         return userDsl.findUseGroupByList();
     }

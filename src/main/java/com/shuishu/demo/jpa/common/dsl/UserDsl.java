@@ -2,6 +2,8 @@ package com.shuishu.demo.jpa.common.dsl;
 
 
 import com.querydsl.core.BooleanBuilder;
+import com.querydsl.core.types.Order;
+import com.querydsl.core.types.OrderSpecifier;
 import com.querydsl.core.types.Projections;
 import com.querydsl.core.types.dsl.Expressions;
 import com.shuishu.demo.jpa.common.config.jdbc.BaseDsl;
@@ -10,10 +12,13 @@ import com.shuishu.demo.jpa.common.domain.po.QAddress;
 import com.shuishu.demo.jpa.common.domain.po.QUser;
 import com.shuishu.demo.jpa.common.domain.po.User;
 import com.shuishu.demo.jpa.common.domain.vo.UserVO;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -135,6 +140,71 @@ public class UserDsl extends BaseDsl {
     }
 
     /**
+     * OrderSpecifier API 的使用 (一个条件)
+     * @return -
+     */
+    public List<UserVO> findUseOrderSpecifierList() {
+        OrderSpecifier<Integer> orderSpecifier = qUser.userAge.desc();
+        return jpaQueryFactory.select(Projections.fields(UserVO.class,
+                qUser.userId,
+                qUser.userName,
+                qUser.userAge,
+                qUser.integrate
+        ))
+                .from(qUser)
+                .orderBy(orderSpecifier)
+                .fetch();
+    }
+
+    /**
+     * OrderSpecifier API 的使用 (多个条件)
+     * @return -
+     */
+    public List<UserVO> findUseMoreOrderSpecifierList() {
+        // 数组中的位置，是有排序优先级的
+        // 先以integrate排序，遇到相同的值，再以userAge排序
+        OrderSpecifier<?>[] orderSpecifierArray = new OrderSpecifier[]{
+                qUser.integrate.desc().nullsLast(),
+                qUser.userAge.desc().nullsLast()
+        };
+
+        return jpaQueryFactory.select(Projections.fields(UserVO.class,
+                qUser.userId,
+                qUser.userName,
+                qUser.userAge,
+                qUser.integrate
+        ))
+                .from(qUser)
+                .orderBy(orderSpecifierArray)
+                .fetch();
+    }
+
+    /**
+     * OrderSpecifier API 的使用 (多个条件) ，加入逻辑判断
+     * @return -
+     */
+    public List<UserVO> findUseMoreLogicOrderSpecifierList(String order) {
+        List<OrderSpecifier<?>> orderList = new ArrayList<>();
+        if (Order.DESC.name().equals(order)){
+            orderList.add(qUser.userAge.desc().nullsLast());
+            orderList.add(qUser.integrate.desc().nullsLast());
+        }else if (Order.ASC.name().equals(order)){
+            orderList.add(qUser.userAge.asc().nullsLast());
+        }
+        OrderSpecifier<?>[] orderSpecifierArray = orderList.toArray(new OrderSpecifier<?>[0]);
+
+        return jpaQueryFactory.select(Projections.fields(UserVO.class,
+                qUser.userId,
+                qUser.userName,
+                qUser.userAge,
+                qUser.integrate
+        ))
+                .from(qUser)
+                .orderBy(orderSpecifierArray)
+                .fetch();
+    }
+
+    /**
      * DATE_FORMAT 自定义格式
      * @return -
      */
@@ -247,7 +317,6 @@ public class UserDsl extends BaseDsl {
                     .execute();
         }
     }
-
 
 
 }

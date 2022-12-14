@@ -37,11 +37,11 @@ CREATE TABLE "public"."ss_product" (
 -- ----------------------------
 -- Records of ss_product
 -- ----------------------------
-INSERT INTO "public"."ss_product" VALUES (3, 802, '五常米', '大米', 3.5, '袋', NULL, NULL, NULL, NULL);
-INSERT INTO "public"."ss_product" VALUES (4, 332, '4K屏电视', '电视机', 5688, '台', NULL, NULL, NULL, NULL);
-INSERT INTO "public"."ss_product" VALUES (5, 231, '美味的橙汁', '橙汁', 8.6, '瓶', NULL, NULL, NULL, NULL);
-INSERT INTO "public"."ss_product" VALUES (1, 500, '智能5G手机', '手机', 5000, '台', NULL, NULL, NULL, NULL);
-INSERT INTO "public"."ss_product" VALUES (2, 2500, '内蒙古牛肉', '牛肉', 80, '200g', NULL, NULL, NULL, NULL);
+INSERT INTO "ss_product" ("product_id", "product_count", "product_description", "product_name", "product_price", "specification", "create_time", "create_user_id", "update_time", "update_user_id") VALUES (3, 802, '五常米', '大米', '3.5', '袋', NULL, NULL, NULL, NULL);
+INSERT INTO "ss_product" ("product_id", "product_count", "product_description", "product_name", "product_price", "specification", "create_time", "create_user_id", "update_time", "update_user_id") VALUES (4, 332, '4K屏电视', '电视机', '5688', '台', NULL, NULL, NULL, NULL);
+INSERT INTO "ss_product" ("product_id", "product_count", "product_description", "product_name", "product_price", "specification", "create_time", "create_user_id", "update_time", "update_user_id") VALUES (5, 231, '美味的橙汁', '橙汁', '8.6', '瓶', NULL, NULL, NULL, NULL);
+INSERT INTO "ss_product" ("product_id", "product_count", "product_description", "product_name", "product_price", "specification", "create_time", "create_user_id", "update_time", "update_user_id") VALUES (1, 500, '智能5G手机', '手机', '5000', '台', NULL, NULL, NULL, NULL);
+INSERT INTO "ss_product" ("product_id", "product_count", "product_description", "product_name", "product_price", "specification", "create_time", "create_user_id", "update_time", "update_user_id") VALUES (2, 2500, '内蒙古牛肉', '牛肉', '80', '200g', NULL, NULL, NULL, NULL);
 
 -- ----------------------------
 -- Primary Key structure for table ss_product
