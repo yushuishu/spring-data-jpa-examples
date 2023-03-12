@@ -32,6 +32,15 @@ public class ProductDsl extends BaseDsl {
 
 
     /**
+     * queryDsl5.0 版本，hibernate6.x以上，要使用transform()，需要注意配置的JPAQueryFactory
+     * <a href="https://github.com/querydsl/querydsl/issues/3428">...</a>
+     * -------------------------------------------------------------------------------------
+     *  @Bean
+     *  public JPAQueryFactory jpaQueryFactory() {
+     *      return new JPAQueryFactory(JPQLTemplates.DEFAULT, entityManager);
+     *  }
+     * -------------------------------------------------------------------------------------
+     *
      * 一对多查询，qProduct主表  qOrder从表
      * 使用 innerJoin() 产生笛卡尔积，以 qProduct分组，将 qOrder结果转换到 .as("orderList") 属性中。
      * 尝试调用接口，查看返回结果的数据格式结构，可以很方便的处理数据集，不必要在 service 层使用stream等方式处理结果集
@@ -66,6 +75,15 @@ public class ProductDsl extends BaseDsl {
     }
 
     /**
+     * queryDsl5.0 版本，hibernate6.x以上，要使用transform()，需要注意配置的JPAQueryFactory
+     * <a href="https://github.com/querydsl/querydsl/issues/3428">...</a>
+     * -------------------------------------------------------------------------------------
+     *  @Bean
+     *  public JPAQueryFactory jpaQueryFactory() {
+     *      return new JPAQueryFactory(JPQLTemplates.DEFAULT, entityManager);
+     *  }
+     * -------------------------------------------------------------------------------------
+     *
      * 一对多查询，qProduct主表  qOrder从表
      *
      * 一对多关系表，分页查询，会存在笛卡尔积，所以查询总数的时候，以主表id分组去重，获取总数
