@@ -394,6 +394,17 @@ innerJoin().on() ：内连接
 一对多查询，qProduct主表（产品表） qOrder从表（订单表）。
 通过SQL内连接的查询方式，一次性的查询出所有数据，再通过使用`querydsl`的内置函数处理`笛卡尔积`，避免通过业务层逻辑（分组操作或多次执行查询）处理各个产品的所有订单数据
 
+**PS:**
+
+queryDsl5.0 版本，hibernate6.x以上，要使用transform()，需要注意配置的JPAQueryFactory
+
+```java
+@Bean
+public JPAQueryFactory jpaQueryFactory() {
+    return new JPAQueryFactory(JPQLTemplates.DEFAULT, entityManager);
+}
+```
+
 查询示例结果
 ```json
 {
@@ -477,9 +488,14 @@ innerJoin().on() ：内连接
 
 这里主要关注的是分页中的总数数据查询，因为内连接会产生笛卡尔积，所以需要去重。需要注意是builder的条件都是qProduct主表的字段条件
 
+**PS:**
 
-<br>
-<hr>
+queryDsl5.0 版本，hibernate6.x以上，要使用transform()，需要注意配置的JPAQueryFactory
 
-<p><span style="float:right;">2022-12-17</span></p>
+```java
+@Bean
+public JPAQueryFactory jpaQueryFactory() {
+    return new JPAQueryFactory(JPQLTemplates.DEFAULT, entityManager);
+}
+```
 
