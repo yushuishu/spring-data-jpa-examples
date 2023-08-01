@@ -1,36 +1,21 @@
 # spring-data-jpa-examples
-探索spring-data-jpa的使用
 
-<br>
-<br>
+<p>
+  <a href="https://www.oracle.com/java/technologies/javase/8u-relnotes.html"><img src="https://img.shields.io/badge/jdk-%3E=1.8-blue.svg" alt="jdk compatility"></a>
+  <a href="https://spring.io/projects/spring-boot"><img src="https://img.shields.io/badge/springboot-%3E=2.3.3-green.svg" alt="springboot compatility"></a>
+  <a href="https://www.postgresql.org/"><img src="https://img.shields.io/badge/postgresql_server-%3E=14.x-orange.svg" alt="postgresql-server compatility"></a>
+  <a href="http://querydsl.com/"><img src="https://img.shields.io/badge/queryDsl-=4.x-red.svg" alt="queryDsl compatility"></a>
+</p>
 
-# 技术栈
-Spring Boot: 2.3.3.RELEASE
+## 介绍
 
-Spring Data Jpa: 2.3.3.RELEASE  (已包含Hibernate5.4.20.Final)
+项目基于 [springboot@2.3.3.RELEASE](https://spring.io/projects/spring-boot) 系列开发，开发环境使用 [jdk@1.8](https://www.oracle.com/java/technologies/javase/8u-relnotes.html)。
 
-PostgreSQL: 42.2.14
+spring-data-jpa、hibernate、querydsl的简单使用、遇到的问题、总结。
 
-HikariCP: 3.4.5
+## 预览
 
-Hibernate-validator: 6.1.2.Final
-
-querydsl: 4.3.1
-
-Hutool-all: 5.7.22
-
-lombok: 1.18.22
-
-FastJson: 1.2.79
-
-guava: 31.1-jre
-
-com.github.xiaoymin.knife4j-spring-boot-starter: 2.0.9
-
-<br>
-<br>
-
-# 包路径详情
+## 项目结构说明
 
 ```text
 - com.shuishu.demo.jpa
@@ -51,32 +36,15 @@ com.github.xiaoymin.knife4j-spring-boot-starter: 2.0.9
         - impl          (service接口实现)
 ```
 
-<br>
-<br>
+## 接口文档
 
-# 知识点
+http://localhost:8080/doc.html
 
-Hibernate 默认情况下查询出来的数据对象时持久态。 
-Hibernate 中对象的三种状态：
+## 使用
 
-- 临时状态：通过new新建的对象，这样的对象是没有被持久化的，也不在session缓存中
-- 游离状态：已经被持久化，但不在session缓存中
-- 持久状态：已经被持久化，也在session缓存中
+调用接口测试，接口说明：
 
-持久态到游离态的方法有：session.close()、session.evict(obj)、session.clear()
-- close()：关闭session，整个session中的持久态对象都成为游离态
-- clear()：清楚session中的所有缓存，所有持久化对象变为游离态
-- evict(obj)：把某个持久化状态的对象从session中清除，该对象变为游离态
-
-<br>
-<br>
-
-# 测试
-
-## TransactionController （事务、并发）
-
-
-- 并发更新(不加锁) transaction/concurrence/update/{userId} 
+- 并发更新(不加锁) transaction/concurrence/update/{userId}
 
   数据正常：querydsl的add方法累加数字，一般情况下的更新操作
 
@@ -111,16 +79,27 @@ Hibernate 中对象的三种状态：
   数据没有更新：使用 new 创建新的对象，将查询出来的对象的值（持久态对象）copy 到 新创建的对象中，使用 set 操作更新，观察数据库
 
 
-<br>
 
-### 结论
+## 总结
+
+Hibernate 默认情况下查询出来的数据对象时持久态。
+
+Hibernate 中对象的三种状态：
+
+- 临时状态：通过new新建的对象，这样的对象是没有被持久化的，也不在session缓存中
+- 游离状态：已经被持久化，但不在session缓存中
+- 持久状态：已经被持久化，也在session缓存中
+
+持久态到游离态的方法有：session.close()、session.evict(obj)、session.clear()
+- close()：关闭session，整个session中的持久态对象都成为游离态
+- clear()：清楚session中的所有缓存，所有持久化对象变为游离态
+- evict(obj)：把某个持久化状态的对象从session中清除，该对象变为游离态
+
 
 1、JPA查询到的对象属性被set后，自动执行update
 
 JPA查询后的对象处于持久态，持久态的对象属性在被set后，会自动执行update语句更新数据库。只要把持久态的对象转换为游离态或者是临时态，就可以解决问题。
 出现这种现象的前提，查询以及对查询后的实体set值都必须在一个事务里，并且在方法执行结束，事务提交前，不管有没有显示调用update，JPA都会自动调用update。
-
-
 
 **解决方案：**
 
@@ -139,7 +118,6 @@ entityManager：javax.persistence.EntityManager
 private EntityManager entityManager;
 ```
 
-
 把查询出来的实体对象，从 session 中清除
 
 Session：org.hibernate.Session
@@ -150,30 +128,11 @@ user：业务实体对象（查询出来的对象）
 entityManager.unwrap(Session.class).evict(user);
 ```
 
-
-
 2、持久态对象 set 操作之后，更新SQL的执行时间
 
 - 只有再次查询表数据时，会先执行跟新语句。
 - 当前事务结束
 
-
-<br>
-<br>
-
-## QueryDslController  （QueryDsl使用）
-
-### querydsl
-
-官网：http://querydsl.com/ 
-
-GitHub：https://github.com/querydsl/querydsl 
-
-当前官网版本：5.0.0 ,  4.4.0  ,  4.3.1  ,  4.2.2  ,  4.1.4
-
-示例工程版本：4.3.1
-
-<br>
 
 ### 空表数据查询
 
@@ -498,4 +457,9 @@ public JPAQueryFactory jpaQueryFactory() {
     return new JPAQueryFactory(JPQLTemplates.DEFAULT, entityManager);
 }
 ```
+
+
+
+
+## 引用
 
