@@ -58,19 +58,21 @@ public class QuerydslServiceImpl implements QuerydslService {
 
     @Override
     public void findNullDataList() {
+        //jpa内置    false
         List<NullData> all = nullDataRepository.findAll();
-        List<NullData> all2 = nullDataDsl.findAll();
-        NullData data1 = nullDataRepository.findFirstByDataId(1L);
-        NullData data2 = nullDataDsl.findByDataId(1L);
-
-        //false
-        //false
-        //true
-        //true
         System.out.println(all == null);
+        //querydsl fetch()    false
+        List<NullData> all2 = nullDataDsl.findAll();
         System.out.println(all2 == null);
+        //jpa重写    true
+        NullData data1 = nullDataRepository.findFirstByDataId(1L);
         System.out.println(data1 == null);
+        //querydsl fetchOne()    true
+        NullData data2 = nullDataDsl.findByDataId(1L);
         System.out.println(data2 == null);
+        //querydsl fetchOne()    true
+        NullData data3 = nullDataDsl.findByDataId(1L);
+        System.out.println(data3 == null);
     }
 
     @Override

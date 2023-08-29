@@ -29,4 +29,8 @@ public class NullDataDsl extends BaseDsl {
         return jpaQueryFactory.selectFrom(qNullData).where(qNullData.dataId.eq(dataId)).fetchOne();
     }
 
+    public NullData findByDataId2(long dataId) {
+        return jpaQueryFactory.selectFrom(qNullData).where(qNullData.dataId.eq(dataId)).fetchFirst();
+    }
+
 }

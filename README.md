@@ -140,6 +140,24 @@ entityManager.unwrap(Session.class).evict(user);
 
 查看`queryDsl`和`repository` 查询空数据时，返回的结果 null 还是对象
 
+```text
+// jpa内置    false
+List<NullData> all = nullDataRepository.findAll();
+System.out.println(all == null);
+//querydsl fetch()    false
+List<NullData> all2 = nullDataDsl.findAll();
+System.out.println(all2 == null);
+//jpa重写    true
+NullData data1 = nullDataRepository.findFirstByDataId(1L);
+System.out.println(data1 == null);
+//querydsl fetchOne()    true
+NullData data2 = nullDataDsl.findByDataId(1L);
+System.out.println(data2 == null);
+//querydsl fetchOne()    true
+NullData data3 = nullDataDsl.findByDataId(1L);
+System.out.println(data3 == null);
+```
+
 <br>
 
 ### 等于某个值的-结果集
